@@ -14,8 +14,9 @@ import { useState } from 'react';
 import { authStyles } from '@/assets/styles/auth.styles';
 import { images } from '@/constants/images';
 import { Image } from 'expo-image';
-import { COLORS } from '../../constants/colors';
+import { COLORS } from '@/constants/colors';
 import { Ionicons } from '@expo/vector-icons';
+import VerifyEmailScreen from './verify-email';
 
 const SignUpScreen = () => {
   const router = useRouter();
@@ -57,7 +58,12 @@ const SignUpScreen = () => {
     }
   };
   if (pendingVerification)
-    return <Text>&quot;Pending ui will go here&quot;;</Text>;
+    return (
+      <VerifyEmailScreen
+        email={email}
+        onBack={() => setPendingVerification(false)}
+      />
+    );
   return (
     <View style={authStyles.container}>
       <KeyboardAvoidingView
