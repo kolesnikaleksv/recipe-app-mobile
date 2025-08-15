@@ -39,7 +39,7 @@ export const MealAPI = {
       console.log('Fetch attempt completed');
     }
   },
-  getRandomMeals: async (count) => {
+  getRandomMeals: async (count = 6) => {
     try {
       const promises = Array.from({ length: count }, () =>
         MealAPI.getRandomMeal()
