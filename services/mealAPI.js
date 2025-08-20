@@ -117,8 +117,8 @@ export const MealAPI = {
         ? meal.strMealDescription.substring(0, 120) + '...'
         : 'No description available',
       image: meal.strMealThumb,
-      cookTime: '30 minutes',
-      serving: 4,
+      cookTime: 30,
+      servings: '4',
       category: meal.strCategory || 'Main Course',
       area: meal.strArea,
       instructions,

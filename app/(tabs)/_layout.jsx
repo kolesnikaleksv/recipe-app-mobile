@@ -5,7 +5,9 @@ import { COLORS } from '@/constants/colors';
 
 const Tabslayout = () => {
   const { isSignedIn } = useAuth();
+
   if (!isSignedIn) return <Redirect href={'/(auth)/sign-in'} />;
+
   return (
     <Tabs
       screenOptions={{

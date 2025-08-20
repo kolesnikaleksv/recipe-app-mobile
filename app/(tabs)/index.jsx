@@ -17,6 +17,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { COLORS } from '@/constants/colors';
 import CategoryFilter from '@/components/CategoryFilter';
 import RecipeCard from '@/components/RecipeCard';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
 const HomeScreen = () => {
   const router = useRouter();
@@ -91,6 +92,9 @@ const HomeScreen = () => {
   useEffect(() => {
     loadData();
   }, []);
+
+  if (loading && !refreshing)
+    return <LoadingSpinner message="Loading delicious recipes..." />;
 
   return (
     <View style={homeStyles.container}>
